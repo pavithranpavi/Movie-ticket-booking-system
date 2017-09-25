@@ -1,0 +1,38 @@
+<!-- <nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Mzapp Business</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+<md-toolbar color="primary" class="custom_header">
+  <h1 class="mat-display-4">Mzapp Business</h1>
+  <div fxFlex></div>
+  <button md-icon-button [mdMenuTriggerFor]="menu">
+    <md-icon>exit_to_app</md-icon>
+  </button>
+  <md-menu #menu="mdMenu" yPosition="below" [overlapTrigger]="false">
+    <button md-menu-item >
+      <a routerLink="myBooking">
+        <md-icon>lock_open</md-icon>
+        <span>My booking</span>
+      </a>
+    </button>
+    <button md-menu-item >
+      <a routerLink="bookTicket">
+        <md-icon>lock_open</md-icon>
+        <span>Book ticket</span>
+      </a>
+    </button>
+  </md-menu>
+</md-toolbar>

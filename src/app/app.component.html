@@ -1,0 +1,15 @@
+<md-toolbar color="primary" class="custom_header">
+    <h1 class="mat-display-4"> <a style="color: #FFFFFF;text-decoration: none;" routerLinkActive="active" routerLink="/landing">Movies </a></h1>
+    <h1 class="mat-display-4" fxFlexOffset="2"> <a style="color: #FFFFFF;text-decoration: none" routerLinkActive="active" routerLink="/myBooking">My Bookings </a></h1>
+    <div fxFlex></div>
+    <button md-icon-button [mdMenuTriggerFor]="menu">
+        <md-icon>exit_to_app</md-icon>
+    </button>
+    <md-menu #menu="mdMenu" yPosition="below" [overlapTrigger]="false">
+        <a  md-menu-item>
+            <md-icon>lock_open</md-icon>
+            <span>Log out</span>
+        </a>
+    </md-menu>
+</md-toolbar>
+<router-outlet></router-outlet>

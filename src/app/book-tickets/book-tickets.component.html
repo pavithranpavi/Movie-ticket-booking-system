@@ -1,0 +1,60 @@
+<div fxLayout="column" class="book-ticket" *ngIf="movieDetail">
+  <div fxLayout="row" fxLayout.xs="column" class="movie-title">
+
+    <div fxFlex="50" fxLayout="column">
+      <div class="title"><b>{{movieDetail.title}}</b></div>
+      <div fxLayout="row">
+        <md-icon>star</md-icon>
+        <md-icon>star</md-icon>
+        <md-icon>star</md-icon>
+      </div>
+
+    </div>
+
+    <div fxFlex="50">
+      <span fxFlex></span>
+      <button md-raised-button routerLink="/landing" color="primary"> Back</button>
+    </div>
+  </div>
+  <span fxFlex style="border-bottom: 1px solid #dddddd"></span>
+  <div fxLayout="row" fxLayout.xs="column">
+
+    <div fxFlex="45">
+      <form class="example-form">
+        <table class="example-full-width" fxFlexFill cellspacing="0">
+          <tr>
+            <td>
+              <md-form-field fxFlexFill class="example-full-width">
+                <input mdInput name="quantity" [(ngModel)]="quantity" placeholder="Quantity">
+              </md-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <md-form-field fxFlexFill>
+                <input mdInput name="date" [(ngModel)]="date" [mdDatepicker]="picker" placeholder="Choose a date">
+                <md-datepicker-toggle mdSuffix [for]="picker"></md-datepicker-toggle>
+                <md-datepicker #picker></md-datepicker>
+              </md-form-field>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <button md-raised-button color="primary" (click)="onSubmit(movieDetail,quantity,date)">Submit</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+    <span fxFlex="5"></span>
+
+    <div fxFlex="50" class="review">
+
+      <div class="text">Review</div>
+      <label>
+        <img src="{{movieDetail.url}}"/>
+        {{movieDetail.review}}
+      </label>
+    </div>
+  </div>
+</div>

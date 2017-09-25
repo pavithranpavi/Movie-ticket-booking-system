@@ -1,0 +1,34 @@
+<div class="example-container mat-elevation-z8">
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container mdColumnDef="_id">
+      <md-header-cell *mdHeaderCellDef>Ticket No. </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element._id}} </md-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container mdColumnDef="movieName">
+      <md-header-cell *mdHeaderCellDef>Movie Name </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.movieName}} </md-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container mdColumnDef="quantity">
+      <md-header-cell *mdHeaderCellDef> Quantity </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.quantity}} </md-cell>
+    </ng-container>
+
+    <!-- Color Column -->
+    <ng-container mdColumnDef="date">
+      <md-header-cell *mdHeaderCellDef> Date </md-header-cell>
+      <md-cell *mdCellDef="let element"> {{element.date |date:'dd - MMM - yyyy'}} </md-cell>
+    </ng-container>
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>

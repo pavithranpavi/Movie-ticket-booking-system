@@ -1,0 +1,17 @@
+<div fxLayout="row" fxLayoutAlign="center stretch" fxLayout.xs="column" fxLayoutWrap>
+    <md-card fxFlex="25" style="text-align: center" *ngFor=" let movie of movies">
+        <md-card-header fxLayout="row" fxLayoutAlign="center stretch" >
+            <md-card-title  >
+                <h1>{{movie.title}}</h1>
+            </md-card-title>
+        </md-card-header>
+        <img style="height: 200px" src="{{movie.url}}" alt="{{movie.title}}">
+        <md-card-content>
+            <p>{{movie.content}}</p>
+        </md-card-content>
+        <md-card-actions>
+            <button color="primary" md-raised-button>REVIEW</button>
+            <button color="primary" md-raised-button [routerLink]="['/bookTicket',movie.id]" >BOOK</button>
+        </md-card-actions>
+    </md-card>
+</div>
