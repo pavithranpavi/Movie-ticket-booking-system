@@ -9,6 +9,9 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 app.get('/',getIndexFile);
+app.get('/landing',getIndexFile);
+app.get('/myBooking',getIndexFile);
+app.get('/bookTicket/:id',getIndexFile);
 
 
 var mongoose = require('mongoose');
